@@ -136,7 +136,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let request = UNNotificationRequest(
             identifier: UUID().uuidString,
             content: content,
-            trigger: nil // Gửi ngay
+            trigger: nil
         )
 
         UNUserNotificationCenter.current().add(request) { error in
