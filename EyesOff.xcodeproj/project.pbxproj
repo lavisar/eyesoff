@@ -14,6 +14,7 @@
 		FA1CD2832E07E7D200491089 /* EyesOffUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */; };
 		FA1CD2902E07E81900491089 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD28F2E07E81900491089 /* AppLanguage.swift */; };
 		FA1CD2922E07E82E00491089 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2912E07E82E00491089 /* main.swift */; };
+		FA74A7AF2E07EC860015EC91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA74A7AE2E07EC860015EC91 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesOffUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA1CD28F2E07E81900491089 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		FA1CD2912E07E82E00491089 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA74A7AE2E07EC860015EC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 		FA1CD2582E07E7D000491089 = {
 			isa = PBXGroup;
 			children = (
+				FA74A7AE2E07EC860015EC91 /* Info.plist */,
 				FA1CD2632E07E7D000491089 /* EyesOff */,
 				FA1CD2752E07E7D200491089 /* EyesOffTests */,
 				FA1CD27F2E07E7D200491089 /* EyesOffUITests */,
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA74A7AF2E07EC860015EC91 /* Info.plist in Resources */,
 				FA1CD2692E07E7D200491089 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
