@@ -62,6 +62,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         //? App info
         menu.addItem(NSMenuItem(title: lang.aboutMenu, action: #selector(showAbout), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
+        
+        //? Bug report
+        let bugReportItem = NSMenuItem(title: lang.reportBug, action: #selector(sendBugReportEmail), keyEquivalent: "")
+        menu.addItem(bugReportItem)
+        
         menu.addItem(NSMenuItem(title: lang.quit, action: #selector(quitApp), keyEquivalent: "q"))
         statusItem.menu = menu
     }
@@ -164,6 +169,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(showAlertModal(_:)), object: nil)
         
         self.perform(#selector(showAlertModal(_:)), with: alert, afterDelay: 0.1)
+    }
+    
+    @objc func sendBugReportEmail() {
+        let body = """
+        Hi Lavisar,
+        I found a bug in EyesOff.
+        
+        [Describe the issue here]
+        
+        App Version: \(VERSION_INFO)
+        System: \(ProcessInfo.processInfo.operatingSystemVersionString)
+        """
+
+        let email = "https://mail.google.com/mail/?view=cm&fs=1&to=lavisar.dev@gmail.com&su=EyesOff_Bug_Report&body=\(body)"
+
+        if let url = URL(string: email) {
+            NSWorkspace.shared.open(url)
+        }
     }
 
 
