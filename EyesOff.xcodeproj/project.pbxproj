@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA1CD2652E07E7D000491089 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2642E07E7D000491089 /* AppDelegate.swift */; };
+		FA1CD2692E07E7D200491089 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1CD2682E07E7D200491089 /* Assets.xcassets */; };
+		FA1CD2772E07E7D200491089 /* EyesOffTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2762E07E7D200491089 /* EyesOffTests.swift */; };
+		FA1CD2812E07E7D200491089 /* EyesOffUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2802E07E7D200491089 /* EyesOffUITests.swift */; };
+		FA1CD2832E07E7D200491089 /* EyesOffUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */; };
+		FA1CD2902E07E81900491089 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD28F2E07E81900491089 /* AppLanguage.swift */; };
+		FA1CD2922E07E82E00491089 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2912E07E82E00491089 /* main.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA1CD2732E07E7D200491089 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA1CD2592E07E7D000491089 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA1CD2602E07E7D000491089;
+			remoteInfo = EyesOff;
+		};
+		FA1CD27D2E07E7D200491089 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA1CD2592E07E7D000491089 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA1CD2602E07E7D000491089;
+			remoteInfo = EyesOff;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA1CD2612E07E7D000491089 /* EyesOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EyesOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1CD2642E07E7D000491089 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA1CD2682E07E7D200491089 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA1CD26D2E07E7D200491089 /* EyesOff.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EyesOff.entitlements; sourceTree = "<group>"; };
+		FA1CD2722E07E7D200491089 /* EyesOffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyesOffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1CD2762E07E7D200491089 /* EyesOffTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesOffTests.swift; sourceTree = "<group>"; };
+		FA1CD27C2E07E7D200491089 /* EyesOffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyesOffUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1CD2802E07E7D200491089 /* EyesOffUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesOffUITests.swift; sourceTree = "<group>"; };
+		FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesOffUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA1CD28F2E07E81900491089 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		FA1CD2912E07E82E00491089 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA1CD25E2E07E7D000491089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CD26F2E07E7D200491089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CD2792E07E7D200491089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA1CD2582E07E7D000491089 = {
+			isa = PBXGroup;
+			children = (
+				FA1CD2632E07E7D000491089 /* EyesOff */,
+				FA1CD2752E07E7D200491089 /* EyesOffTests */,
+				FA1CD27F2E07E7D200491089 /* EyesOffUITests */,
+				FA1CD2622E07E7D000491089 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA1CD2622E07E7D000491089 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CD2612E07E7D000491089 /* EyesOff.app */,
+				FA1CD2722E07E7D200491089 /* EyesOffTests.xctest */,
+				FA1CD27C2E07E7D200491089 /* EyesOffUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA1CD2632E07E7D000491089 /* EyesOff */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CD2642E07E7D000491089 /* AppDelegate.swift */,
+				FA1CD2682E07E7D200491089 /* Assets.xcassets */,
+				FA1CD26D2E07E7D200491089 /* EyesOff.entitlements */,
+				FA1CD28F2E07E81900491089 /* AppLanguage.swift */,
+				FA1CD2912E07E82E00491089 /* main.swift */,
+			);
+			path = EyesOff;
+			sourceTree = "<group>";
+		};
+		FA1CD2752E07E7D200491089 /* EyesOffTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CD2762E07E7D200491089 /* EyesOffTests.swift */,
+			);
+			path = EyesOffTests;
+			sourceTree = "<group>";
+		};
+		FA1CD27F2E07E7D200491089 /* EyesOffUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA1CD2802E07E7D200491089 /* EyesOffUITests.swift */,
+				FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */,
+			);
+			path = EyesOffUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA1CD2602E07E7D000491089 /* EyesOff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1CD2862E07E7D200491089 /* Build configuration list for PBXNativeTarget "EyesOff" */;
+			buildPhases = (
+				FA1CD25D2E07E7D000491089 /* Sources */,
+				FA1CD25E2E07E7D000491089 /* Frameworks */,
+				FA1CD25F2E07E7D000491089 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EyesOff;
+			productName = EyesOff;
+			productReference = FA1CD2612E07E7D000491089 /* EyesOff.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA1CD2712E07E7D200491089 /* EyesOffTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1CD2892E07E7D200491089 /* Build configuration list for PBXNativeTarget "EyesOffTests" */;
+			buildPhases = (
+				FA1CD26E2E07E7D200491089 /* Sources */,
+				FA1CD26F2E07E7D200491089 /* Frameworks */,
+				FA1CD2702E07E7D200491089 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA1CD2742E07E7D200491089 /* PBXTargetDependency */,
+			);
+			name = EyesOffTests;
+			productName = EyesOffTests;
+			productReference = FA1CD2722E07E7D200491089 /* EyesOffTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA1CD27B2E07E7D200491089 /* EyesOffUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA1CD28C2E07E7D200491089 /* Build configuration list for PBXNativeTarget "EyesOffUITests" */;
+			buildPhases = (
+				FA1CD2782E07E7D200491089 /* Sources */,
+				FA1CD2792E07E7D200491089 /* Frameworks */,
+				FA1CD27A2E07E7D200491089 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA1CD27E2E07E7D200491089 /* PBXTargetDependency */,
+			);
+			name = EyesOffUITests;
+			productName = EyesOffUITests;
+			productReference = FA1CD27C2E07E7D200491089 /* EyesOffUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA1CD2592E07E7D000491089 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					FA1CD2602E07E7D000491089 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					FA1CD2712E07E7D200491089 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FA1CD2602E07E7D000491089;
+					};
+					FA1CD27B2E07E7D200491089 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FA1CD2602E07E7D000491089;
+					};
+				};
+			};
+			buildConfigurationList = FA1CD25C2E07E7D000491089 /* Build configuration list for PBXProject "EyesOff" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA1CD2582E07E7D000491089;
+			productRefGroup = FA1CD2622E07E7D000491089 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA1CD2602E07E7D000491089 /* EyesOff */,
+				FA1CD2712E07E7D200491089 /* EyesOffTests */,
+				FA1CD27B2E07E7D200491089 /* EyesOffUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA1CD25F2E07E7D000491089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CD2692E07E7D200491089 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CD2702E07E7D200491089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CD27A2E07E7D200491089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA1CD25D2E07E7D000491089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CD2652E07E7D000491089 /* AppDelegate.swift in Sources */,
+				FA1CD2902E07E81900491089 /* AppLanguage.swift in Sources */,
+				FA1CD2922E07E82E00491089 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CD26E2E07E7D200491089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CD2772E07E7D200491089 /* EyesOffTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA1CD2782E07E7D200491089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1CD2832E07E7D200491089 /* EyesOffUITestsLaunchTests.swift in Sources */,
+				FA1CD2812E07E7D200491089 /* EyesOffUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA1CD2742E07E7D200491089 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA1CD2602E07E7D000491089 /* EyesOff */;
+			targetProxy = FA1CD2732E07E7D200491089 /* PBXContainerItemProxy */;
+		};
+		FA1CD27E2E07E7D200491089 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA1CD2602E07E7D000491089 /* EyesOff */;
+			targetProxy = FA1CD27D2E07E7D200491089 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA1CD2842E07E7D200491089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA1CD2852E07E7D200491089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FA1CD2872E07E7D200491089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EyesOff/EyesOff.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTLTSBZ4N8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lavisar.EyesOff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FA1CD2882E07E7D200491089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EyesOff/EyesOff.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTLTSBZ4N8;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lavisar.EyesOff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FA1CD28A2E07E7D200491089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTLTSBZ4N8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lavisar.EyesOffTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EyesOff.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EyesOff";
+			};
+			name = Debug;
+		};
+		FA1CD28B2E07E7D200491089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTLTSBZ4N8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lavisar.EyesOffTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EyesOff.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EyesOff";
+			};
+			name = Release;
+		};
+		FA1CD28D2E07E7D200491089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTLTSBZ4N8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lavisar.EyesOffUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = EyesOff;
+			};
+			name = Debug;
+		};
+		FA1CD28E2E07E7D200491089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTLTSBZ4N8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lavisar.EyesOffUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = EyesOff;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA1CD25C2E07E7D000491089 /* Build configuration list for PBXProject "EyesOff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CD2842E07E7D200491089 /* Debug */,
+				FA1CD2852E07E7D200491089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1CD2862E07E7D200491089 /* Build configuration list for PBXNativeTarget "EyesOff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CD2872E07E7D200491089 /* Debug */,
+				FA1CD2882E07E7D200491089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1CD2892E07E7D200491089 /* Build configuration list for PBXNativeTarget "EyesOffTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CD28A2E07E7D200491089 /* Debug */,
+				FA1CD28B2E07E7D200491089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA1CD28C2E07E7D200491089 /* Build configuration list for PBXNativeTarget "EyesOffUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA1CD28D2E07E7D200491089 /* Debug */,
+				FA1CD28E2E07E7D200491089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA1CD2592E07E7D000491089 /* Project object */;
+}
