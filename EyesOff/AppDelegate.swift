@@ -21,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupMenuBar()
         requestNotificationPermission()
         startWorkTimer()
+        analysisInstallTime()
     }
 
     func setupMenuBar() {
@@ -170,6 +171,55 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         self.perform(#selector(showAlertModal(_:)), with: alert, afterDelay: 0.1)
     }
+    
+    // 🙌 We collect anonymous stats (lang, OS, version) to improve EyesOff — no personal info, ever.
+    func analysisInstallTime() {
+        let launchedKey = "EyesOff-Analysis"
+
+        guard !UserDefaults.standard.bool(forKey: launchedKey) else {
+            return
+        }
+
+        UserDefaults.standard.set(true, forKey: launchedKey)
+        print("📍 First launch detected. Sending anonymous install ping...")
+
+        guard let url = URL(string: "https://eyesoff.vercel.app/api/install") else {
+            print("❌ Invalid analytics URL")
+            return
+        }
+        //? Request body
+        let payload: [String: String] = [
+            "lang": Locale.current.identifier,
+            "os": ProcessInfo.processInfo.operatingSystemVersionString,
+            "version": VERSION_INFO
+        ]
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: payload)
+        } catch {
+            print("❌ Failed to encode analytics payload: \(error)")
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("⚠️ Install ping failed: \(error.localizedDescription)")
+                return
+            }
+
+            if let httpResponse = response as? HTTPURLResponse {
+                print("📤 Anonymous install ping sent ✅ [HTTP \(httpResponse.statusCode)]")
+            }
+        }.resume()
+    }
+
+
+
+
     
     @objc func sendBugReportEmail() {
         let body = """
