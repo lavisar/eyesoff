@@ -152,7 +152,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    
     func showBreakAlert() {
         if isBreakAlertRunning {
             return
@@ -217,10 +216,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }.resume()
     }
 
-
-
-
-    
     @objc func sendBugReportEmail() {
         let body = """
         Hi Lavisar,
@@ -238,7 +233,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSWorkspace.shared.open(url)
         }
     }
-
 
     @objc func showAlertModal(_ alert: NSAlert) {
         let response = alert.runModal()
@@ -315,8 +309,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let url = URL(string: "x-apple.systempreferences:com.apple.preference.notifications") {
                 NSWorkspace.shared.open(url)
             }
-        }
-
+    }
+    
     @objc func dismissAlertManually() {
         countdownTimer?.invalidate()
         startWorkTimer()

@@ -1,8 +1,17 @@
-//
-//  MenuBarProtocol.swift
-//  EyesOff
-//
-//  Created by Macbook on 25/6/25.
-//
+import Cocoa
 
-import Foundation
+protocol MenuBarManagerDelegate: AnyObject {
+    func menuBarDidSelectSound(_ sound: String)
+    func menuBarDidSelectLanguage(_ language: String)
+    func menuBarDidToggleLoginItem(_ enabled: Bool)
+    func menuBarDidRequestNotificationSettings()
+    func menuBarDidRequestAbout()
+    func menuBarDidRequestBugReport()
+    func menuBarDidRequestQuit()
+}
+
+protocol MenuBarManagerProtocol {
+    var delegate: MenuBarManagerDelegate? { get set }
+    func setupMenuBar()
+    func updateMenuBar()
+}
