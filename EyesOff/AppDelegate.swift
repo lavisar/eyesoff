@@ -6,13 +6,19 @@ import Foundation
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem!
+    var statusBarText: String? {
+        didSet {
+            updateStatusItem()
+        }
+    }
     var workTimer: Timer?
     var countdownTimer: Timer?
     var remainingSeconds = 20
-    var currentInterval: TimeInterval = 20 * 60 // 20 minutes
+    var currentInterval: TimeInterval = 1 * 60 // 20 minutes
     var isBreakAlertRunning = false
     var soundMenu: NSMenu!
-    
+    var ignoreListWindow: NSWindow?
+
     var lang: LocalizedStrings {
         AppLanguage.current.localizedStrings
     }
@@ -60,6 +66,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: lang.notificationSettings, action: #selector(openNotificationSettings), keyEquivalent: ""))
         
+        //? Ignore list
+        menu.addItem(NSMenuItem(title: lang.ignoreList, action: #selector(openIgnoreList), keyEquivalent: ""))
+
         //? App info
         menu.addItem(NSMenuItem(title: lang.aboutMenu, action: #selector(showAbout), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
@@ -70,6 +79,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         menu.addItem(NSMenuItem(title: lang.quit, action: #selector(quitApp), keyEquivalent: "q"))
         statusItem.menu = menu
+        updateStatusItem()
+    }
+
+    func updateStatusItem() {
+        if let text = statusBarText {
+            statusItem.button?.title = "\u{1F441}\u{FE0F} \(text)"
+        } else {
+            statusItem.button?.title = "\u{1F441}\u{FE0F}"
+        }
     }
     
     func setupLanguageMenu() -> NSMenuItem {
@@ -112,6 +130,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func triggerBreakReminder() {
+        guard let frontmostApp = NSWorkspace.shared.frontmostApplication,
+              let bundleIdentifier = frontmostApp.bundleIdentifier else {
+            // If we can't get the frontmost app, show the alert by default
+            showBreakAlertWithCountdown()
+            return
+        }
+
+        let ignoredApps = UserDefaults.standard.stringArray(forKey: "IgnoredApps") ?? []
+        if ignoredApps.contains(bundleIdentifier) {
+            print("> App is in ignore list, skipping break reminder.")
+            return
+        }
+
+        showBreakAlertWithCountdown()
+    }
+    
+    func showBreakAlertWithCountdown() {
+        print("> Break alert is showing...")
         DispatchQueue.main.async {
             self.remainingSeconds = 20
             self.showBreakAlert()
@@ -125,6 +161,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             self.remainingSeconds -= 1
+            self.statusBarText = "You should break now in \(self.remainingSeconds)s"
             if self.remainingSeconds <= 0 {
                 timer.invalidate()
                 self.sendBackToWorkNotification()
@@ -149,6 +186,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let error = error {
                 print("❌ Failed to send notification: \(error)")
             }
+        }
+        self.statusBarText = "You can back to work now"
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.statusBarText = nil
         }
     }
 
@@ -309,6 +350,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             if let url = URL(string: "x-apple.systempreferences:com.apple.preference.notifications") {
                 NSWorkspace.shared.open(url)
             }
+    }
+    
+    @objc func openIgnoreList() {
+        if ignoreListWindow == nil {
+            let viewController = IgnoreListViewController()
+            viewController.appDelegate = self
+            
+            let window = NSWindow(contentViewController: viewController)
+            window.title = lang.ignoreList
+            window.styleMask = [.titled, .closable, .miniaturizable]
+            window.isReleasedWhenClosed = false // Important: Keep the window instance
+            
+            ignoreListWindow = window
+        }
+        
+        ignoreListWindow?.center()
+        ignoreListWindow?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
     }
     
     @objc func dismissAlertManually() {

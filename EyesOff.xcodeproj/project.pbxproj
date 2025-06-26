@@ -14,6 +14,7 @@
 		FA1CD2832E07E7D200491089 /* EyesOffUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */; };
 		FA1CD2902E07E81900491089 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD28F2E07E81900491089 /* AppLanguage.swift */; };
 		FA1CD2922E07E82E00491089 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2912E07E82E00491089 /* main.swift */; };
+		FA1CD2942E07E81900491090 /* IgnoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1CD2932E07E81900491090 /* IgnoreListViewController.swift */; };
 		FA74A7AF2E07EC860015EC91 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA74A7AE2E07EC860015EC91 /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		FA1CD2822E07E7D200491089 /* EyesOffUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyesOffUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA1CD28F2E07E81900491089 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		FA1CD2912E07E82E00491089 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA1CD2932E07E81900491090 /* IgnoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreListViewController.swift; sourceTree = "<group>"; };
 		FA74A7AE2E07EC860015EC91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				FA1CD26D2E07E7D200491089 /* EyesOff.entitlements */,
 				FA1CD28F2E07E81900491089 /* AppLanguage.swift */,
 				FA1CD2912E07E82E00491089 /* main.swift */,
+				FA1CD2932E07E81900491090 /* IgnoreListViewController.swift */,
 			);
 			path = EyesOff;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				FA1CD2652E07E7D000491089 /* AppDelegate.swift in Sources */,
 				FA1CD2902E07E81900491089 /* AppLanguage.swift in Sources */,
 				FA1CD2922E07E82E00491089 /* main.swift in Sources */,
+				FA1CD2942E07E81900491090 /* IgnoreListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
