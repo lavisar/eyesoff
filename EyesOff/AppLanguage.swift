@@ -62,6 +62,7 @@ struct LocalizedStrings {
     let selectSound: String
     let language: String
     let ignoreList: String
+    let selectIcon: String
 
     static let en = LocalizedStrings(
         breakTitle: "👁️ EyesOff Break Time!",
@@ -88,7 +89,8 @@ struct LocalizedStrings {
         quit: "Quit",
         selectSound: "Select Sound",
         language: "Language",
-        ignoreList: "Manage Ignored Apps"
+        ignoreList: "Manage Ignored Apps",
+        selectIcon: "Select Icon"
     )
 
     static let vi = LocalizedStrings(
@@ -116,7 +118,8 @@ struct LocalizedStrings {
         quit: "Thoát",
         selectSound: "Chọn âm thanh",
         language: "Ngôn ngữ",
-        ignoreList: "Quản lý ứng dụng bỏ qua"
+        ignoreList: "Quản lý ứng dụng bỏ qua",
+        selectIcon: "Chọn biểu tượng"
     )
 
     static let ja = LocalizedStrings(
@@ -144,7 +147,8 @@ struct LocalizedStrings {
         quit: "終了",
         selectSound: "サウンドを選択",
         language: "言語",
-        ignoreList: "無視するアプリを管理"
+        ignoreList: "無視するアプリを管理",
+        selectIcon: "アイコンを選択"
     )
 
     static let ko = LocalizedStrings(
@@ -172,7 +176,8 @@ struct LocalizedStrings {
         quit: "종료",
         selectSound: "소리 선택",
         language: "언어",
-        ignoreList: "무시할 앱 관리"
+        ignoreList: "무시할 앱 관리",
+        selectIcon: "아이콘 선택"
     )
 
     static let es = LocalizedStrings(
@@ -200,7 +205,8 @@ struct LocalizedStrings {
         quit: "Salir",
         selectSound: "Seleccionar sonido",
         language: "Idioma",
-        ignoreList: "Gestionar aplicaciones ignoradas"
+        ignoreList: "Gestionar aplicaciones ignoradas",
+        selectIcon: "Seleccionar icono"
     )
 
     static let zhHans = LocalizedStrings(
@@ -228,6 +234,7 @@ struct LocalizedStrings {
         quit: "退出",
         selectSound: "选择声音",
         language: "语言",
-        ignoreList: "管理忽略的应用程序"
+        ignoreList: "管理忽略的应用程序",
+        selectIcon: "选择图标"
     )
 }

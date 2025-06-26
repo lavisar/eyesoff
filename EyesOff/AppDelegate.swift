@@ -17,10 +17,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var currentInterval: TimeInterval = 1 * 60 // 20 minutes
     var isBreakAlertRunning = false
     var soundMenu: NSMenu!
+    var iconMenu: NSMenu! // Icon selection menu
     var ignoreListWindow: NSWindow?
 
     var lang: LocalizedStrings {
         AppLanguage.current.localizedStrings
+    }
+
+    enum AppIcon: String, CaseIterable {
+        case opt1 = "👁️"
+        case opt2 = "👀"
+        case opt3 = "👨🏻‍💻"
+        case opt4 = "👩🏻‍💻"
+        
+        var name: String {
+            switch self {
+            case .opt1: return "👁️ Simple Eye"
+            case .opt2: return "👀 Looking Eyes"
+            case .opt3: return "👨🏻‍💻 Woking Male"
+            case .opt4: return "👩🏻‍💻 Woking Female"
+            }
+        }
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
@@ -32,13 +49,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func setupMenuBar() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-        statusItem.button?.title = "\u{1F441}\u{FE0F}"
-
+        
         let menu = NSMenu()
         soundMenu = NSMenu()
+        iconMenu = NSMenu() // Initialize icon menu
+
+        // Sound customize
         let sounds = getSystemSoundNames()
         let currentSound = getSelectedSound()
-
         for sound in sounds {
             let menuItem = NSMenuItem()
             let button = NSButton(radioButtonWithTitle: sound, target: self, action: #selector(selectSoundRadio(_:)))
@@ -47,47 +65,78 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             menuItem.view = button
             soundMenu.addItem(menuItem)
         }
-
-
-        //? Sound customize
         let soundMenuItem = NSMenuItem(title: lang.selectSound, action: nil, keyEquivalent: "")
         menu.setSubmenu(soundMenu, for: soundMenuItem)
         menu.addItem(soundMenuItem)
+
+        // Icon selection
+        let currentSelectedIcon = getSelectedIcon()
+        for appIcon in AppIcon.allCases {
+            let menuItem = NSMenuItem(title: appIcon.name, action: #selector(selectIcon(_:)), keyEquivalent: "")
+            menuItem.representedObject = appIcon.rawValue // Store the actual icon string
+            menuItem.state = (appIcon.rawValue == currentSelectedIcon) ? .on : .off
+            iconMenu.addItem(menuItem)
+        }
+        let iconMenuItem = NSMenuItem(title: lang.selectIcon, action: nil, keyEquivalent: "")
+        menu.setSubmenu(iconMenu, for: iconMenuItem)
+        menu.addItem(iconMenuItem)
         
-        //? Language settings
+        // Language settings
         menu.addItem(setupLanguageMenu())
         
-        //? Run on login
+        // Run on login
         let loginItem = NSMenuItem(title: lang.launchAtLogin, action: #selector(toggleLoginItem(_:)), keyEquivalent: "")
         loginItem.state = SMAppService.mainApp.status == .enabled ? .on : .off
         menu.addItem(loginItem)
 
-        //? Noti setting
+        // Noti setting
         menu.addItem(NSMenuItem.separator())
         menu.addItem(NSMenuItem(title: lang.notificationSettings, action: #selector(openNotificationSettings), keyEquivalent: ""))
         
-        //? Ignore list
+        // Ignore list
         menu.addItem(NSMenuItem(title: lang.ignoreList, action: #selector(openIgnoreList), keyEquivalent: ""))
 
-        //? App info
+        // App info
         menu.addItem(NSMenuItem(title: lang.aboutMenu, action: #selector(showAbout), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
         
-        //? Bug report
+        // Bug report
         let bugReportItem = NSMenuItem(title: lang.reportBug, action: #selector(sendBugReportEmail), keyEquivalent: "")
         menu.addItem(bugReportItem)
         
         menu.addItem(NSMenuItem(title: lang.quit, action: #selector(quitApp), keyEquivalent: "q"))
         statusItem.menu = menu
-        updateStatusItem()
+        updateStatusItem() // Initial update of the status item
     }
 
     func updateStatusItem() {
+        let selectedIcon = getSelectedIcon()
         if let text = statusBarText {
-            statusItem.button?.title = "\u{1F441}\u{FE0F} \(text)"
+            statusItem.button?.title = "\(selectedIcon) \(text)"
         } else {
-            statusItem.button?.title = "\u{1F441}\u{FE0F}"
+            statusItem.button?.title = selectedIcon
         }
+    }
+    
+    // New: Save and retrieve selected icon
+    func saveSelectedIcon(_ icon: String) {
+        UserDefaults.standard.set(icon, forKey: "SelectedAppIcon")
+    }
+
+    func getSelectedIcon() -> String {
+        return UserDefaults.standard.string(forKey: "SelectedAppIcon") ?? AppIcon.opt1.rawValue
+    }
+
+    @objc func selectIcon(_ sender: NSMenuItem) {
+        guard let selectedIcon = sender.representedObject as? String else { return }
+        saveSelectedIcon(selectedIcon)
+        updateStatusItem() // Update the status bar immediately
+
+        // Update checkmark in the menu
+        for item in iconMenu.items {
+            item.state = .off
+        }
+        sender.state = .on
     }
     
     func setupLanguageMenu() -> NSMenuItem {
