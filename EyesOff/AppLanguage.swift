@@ -1,7 +1,7 @@
 import Foundation
 
 let WEBSITE_URL = "https://eyesoff.vercel.app"
-let VERSION_INFO = "1.0.0"
+let VERSION_INFO = "1.0.1"
 
 enum AppLanguage: String, CaseIterable {
     case english = "English"
@@ -63,6 +63,15 @@ struct LocalizedStrings {
     let language: String
     let ignoreList: String
     let selectIcon: String
+    let checkForUpdate: String
+    let updateAvailableTitle: String
+    let updateAvailableBody: String
+    let noUpdateTitle: String
+    let noUpdateBody: String
+    let updateCheckFailedTitle: String
+    let updateCheckFailedBody: String
+    let okButton: String
+    let downloadButton: String
 
     static let en = LocalizedStrings(
         breakTitle: "👁️ EyesOff Break Time!",
@@ -90,7 +99,16 @@ struct LocalizedStrings {
         selectSound: "Select Sound",
         language: "Language",
         ignoreList: "Manage Ignored Apps",
-        selectIcon: "Select Icon"
+        selectIcon: "Select Icon",
+        checkForUpdate: "Check for Updates",
+        updateAvailableTitle: "Update Available!",
+        updateAvailableBody: "A new version (%@) is available. You are currently using version %@.",
+        noUpdateTitle: "No Updates",
+        noUpdateBody: "You are using the latest version of EyesOff.",
+        updateCheckFailedTitle: "Update Check Failed",
+        updateCheckFailedBody: "Could not check for updates. Please try again later.",
+        okButton: "OK",
+        downloadButton: "Download"
     )
 
     static let vi = LocalizedStrings(
@@ -119,27 +137,37 @@ struct LocalizedStrings {
         selectSound: "Chọn âm thanh",
         language: "Ngôn ngữ",
         ignoreList: "Quản lý ứng dụng bỏ qua",
-        selectIcon: "Chọn biểu tượng"
+        selectIcon: "Chọn biểu tượng",
+        checkForUpdate: "Kiểm tra cập nhật",
+        updateAvailableTitle: "Có bản cập nhật mới!",
+        updateAvailableBody: "Phiên bản mới (%@) đã có. Bạn đang dùng phiên bản %@.",
+        noUpdateTitle: "Không có cập nhật",
+        noUpdateBody: "Bạn đang dùng phiên bản mới nhất của EyesOff.",
+        updateCheckFailedTitle: "Không thể kiểm tra cập nhật",
+        updateCheckFailedBody: "Không thể kiểm tra cập nhật. Vui lòng thử lại sau.",
+        okButton: "OK",
+        downloadButton: "Tải xuống"
     )
 
     static let ja = LocalizedStrings(
-        breakTitle: "👁️ 目を休める時間です！",
-        breakBody: "🧘 目を休めましょう！\n\n⏳ 20秒間、6メートル先を見てください。\n💡 ゆっくりまばたきして、深呼吸しましょう。",
+        breakTitle: "👁️ 休憩の時間です！",
+        breakBody: "🧘 目を休ませましょう！\n\n⏳ 20秒間、6メートル先を見つめてください。\n💡 ゆっくりまばたきをして、深呼吸しましょう。",
         breakButton: "了解！",
 
         backToWorkTitle: "👁️ EyesOff",
-        backToWorkBody: "作業に戻っても大丈夫です！",
+        backToWorkBody: "作業を再開できます。",
 
         aboutTitle: "EyesOff (20-20-20)",
         aboutBody: """
         バージョン \(VERSION_INFO)
 
-        👁️ EyesOffは20-20-20ルールを守るためのリマインダーです：
-        20分ごとに、6メートル先を20秒間見ましょう。
+        👁️ EyesOffは20-20-20ルールをサポートするリマインダーです。
+        20分ごとに、6メートル先を20秒間見つめましょう。
 
-        🔗 Website: \(WEBSITE_URL)
+        🔗 ウェブサイト: \(WEBSITE_URL)
         👨‍💻 開発者: Lavisar
         """,
+
         launchAtLogin: "ログイン時に起動",
         notificationSettings: "通知設定",
         aboutMenu: "EyesOffについて",
@@ -148,28 +176,39 @@ struct LocalizedStrings {
         selectSound: "サウンドを選択",
         language: "言語",
         ignoreList: "無視するアプリを管理",
-        selectIcon: "アイコンを選択"
+        selectIcon: "アイコンを選択",
+
+        checkForUpdate: "アップデートを確認",
+        updateAvailableTitle: "新しいアップデートがあります！",
+        updateAvailableBody: "バージョン %@ が利用可能です。現在のバージョンは %@ です。",
+        noUpdateTitle: "最新版です",
+        noUpdateBody: "EyesOffは最新バージョンを使用しています。",
+        updateCheckFailedTitle: "アップデートの確認に失敗しました",
+        updateCheckFailedBody: "アップデートを確認できませんでした。後でもう一度お試しください。",
+        okButton: "OK",
+        downloadButton: "ダウンロード"
     )
 
     static let ko = LocalizedStrings(
-        breakTitle: "👁️ 눈 휴식 시간입니다!",
-        breakBody: "🧘 눈을 잠시 쉬게 해주세요!\n\n⏳ 20초 동안 6미터 떨어진 곳을 바라보세요.\n💡 천천히 눈을 깜빡이고 깊게 숨을 쉬세요.",
-        breakButton: "알겠어요!",
+        breakTitle: "👁️ 눈을 쉴 시간이에요!",
+        breakBody: "🧘 눈을 잠시 쉬게 해주세요!\n\n⏳ 20초 동안 6미터 앞을 바라보세요.\n💡 천천히 눈을 깜빡이고 깊게 숨을 쉬세요.",
+        breakButton: "확인!",
 
         backToWorkTitle: "👁️ EyesOff",
-        backToWorkBody: "이제 다시 작업을 시작해도 됩니다!",
+        backToWorkBody: "이제 다시 작업을 시작할 수 있어요!",
 
         aboutTitle: "EyesOff (20-20-20)",
         aboutBody: """
         버전 \(VERSION_INFO)
 
-        👁️ EyesOff는 20-20-20 규칙을 따르도록 도와줍니다:
-        20분마다 6미터 떨어진 곳을 20초 동안 바라보세요.
+        👁️ EyesOff는 20-20-20 규칙을 실천하도록 도와주는 리마인더입니다.
+        20분마다 6미터 떨어진 곳을 20초간 바라보세요.
 
-        🔗 Website: \(WEBSITE_URL)
+        🔗 웹사이트: \(WEBSITE_URL)
         👨‍💻 개발자: Lavisar
         """,
-        launchAtLogin: "로그인 시 실행",
+
+        launchAtLogin: "로그인 시 자동 실행",
         notificationSettings: "알림 설정",
         aboutMenu: "EyesOff 정보",
         reportBug: "버그 신고",
@@ -177,7 +216,17 @@ struct LocalizedStrings {
         selectSound: "소리 선택",
         language: "언어",
         ignoreList: "무시할 앱 관리",
-        selectIcon: "아이콘 선택"
+        selectIcon: "아이콘 선택",
+
+        checkForUpdate: "업데이트 확인",
+        updateAvailableTitle: "새로운 업데이트가 있어요!",
+        updateAvailableBody: "버전 %@가 출시되었습니다. 현재 사용 중인 버전은 %@입니다.",
+        noUpdateTitle: "최신 버전입니다",
+        noUpdateBody: "EyesOff는 최신 버전을 사용 중입니다.",
+        updateCheckFailedTitle: "업데이트 확인 실패",
+        updateCheckFailedBody: "업데이트를 확인할 수 없습니다. 나중에 다시 시도해 주세요.",
+        okButton: "확인",
+        downloadButton: "다운로드"
     )
 
     static let es = LocalizedStrings(
@@ -206,7 +255,16 @@ struct LocalizedStrings {
         selectSound: "Seleccionar sonido",
         language: "Idioma",
         ignoreList: "Gestionar aplicaciones ignoradas",
-        selectIcon: "Seleccionar icono"
+        selectIcon: "Seleccionar icono",
+        checkForUpdate: "Buscar actualizaciones",
+        updateAvailableTitle: "¡Actualización disponible!",
+        updateAvailableBody: "Hay una nueva versión (%@) disponible. Actualmente estás usando la versión %@.",
+        noUpdateTitle: "No hay actualizaciones",
+        noUpdateBody: "Estás usando la última versión de EyesOff.",
+        updateCheckFailedTitle: "Fallo al buscar actualizaciones",
+        updateCheckFailedBody: "No se pudieron buscar actualizaciones. Por favor, inténtalo de nuevo más tarde.",
+        okButton: "OK",
+        downloadButton: "Descargar"
     )
 
     static let zhHans = LocalizedStrings(
@@ -235,6 +293,15 @@ struct LocalizedStrings {
         selectSound: "选择声音",
         language: "语言",
         ignoreList: "管理忽略的应用程序",
-        selectIcon: "选择图标"
+        selectIcon: "选择图标",
+        checkForUpdate: "检查更新",
+        updateAvailableTitle: "有可用更新！",
+        updateAvailableBody: "新版本 (%@) 可用。您当前使用的是版本 %@。",
+        noUpdateTitle: "无更新",
+        noUpdateBody: "您正在使用最新版本的 EyesOff。",
+        updateCheckFailedTitle: "检查更新失败",
+        updateCheckFailedBody: "无法检查更新。请稍后再试。",
+        okButton: "确定",
+        downloadButton: "下载"
     )
 }

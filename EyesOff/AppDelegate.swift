@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var workTimer: Timer?
     var countdownTimer: Timer?
     var remainingSeconds = 20
-    var currentInterval: TimeInterval = 1 * 60 // 20 minutes
+    var currentInterval: TimeInterval = 20 * 60 // 20 minutes
     var isBreakAlertRunning = false
     var soundMenu: NSMenu!
     var iconMenu: NSMenu! // Icon selection menu
@@ -103,6 +103,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Bug report
         let bugReportItem = NSMenuItem(title: lang.reportBug, action: #selector(sendBugReportEmail), keyEquivalent: "")
         menu.addItem(bugReportItem)
+        
+        // Check for update
+        menu.addItem(NSMenuItem(title: lang.checkForUpdate, action: #selector(checkForUpdate), keyEquivalent: ""))
         
         menu.addItem(NSMenuItem(title: lang.quit, action: #selector(quitApp), keyEquivalent: "q"))
         statusItem.menu = menu
@@ -320,6 +323,85 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let email = "https://mail.google.com/mail/?view=cm&fs=1&to=lavisar.dev@gmail.com&su=EyesOff_Bug_Report&body=\(body)"
 
         if let url = URL(string: email) {
+            NSWorkspace.shared.open(url)
+        }
+    }
+    
+    @objc func checkForUpdate() {
+        guard let url = URL(string: "https://eyesoff.vercel.app/api/app-info") else {
+            print("❌ Invalid app-info URL")
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self else { return }
+
+            if let error = error {
+                print("⚠️ Failed to fetch app info: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    self.showUpdateAlert(title: self.lang.updateCheckFailedTitle, message: self.lang.updateCheckFailedBody)
+                }
+                return
+            }
+
+            guard let data = data else {
+                print("❌ No data received from app-info endpoint")
+                DispatchQueue.main.async {
+                    self.showUpdateAlert(title: self.lang.updateCheckFailedTitle, message: self.lang.updateCheckFailedBody)
+                }
+                return
+            }
+
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                   let dataArray = json["data"] as? [[String: Any]],
+                   let latest = dataArray.first,
+                   let latestVersion = latest["version"] as? String,
+                   let downloadURL = latest["downloadUrl"] as? String {
+
+                    let currentVersion = VERSION_INFO
+
+                    DispatchQueue.main.async {
+                        if latestVersion.compare(currentVersion, options: .numeric) == .orderedDescending {
+                            self.showUpdateAlert(
+                                title: self.lang.updateAvailableTitle,
+                                message: String(format: self.lang.updateAvailableBody, latestVersion, currentVersion),
+                                downloadURL: downloadURL
+                            )
+                        } else {
+                            self.showUpdateAlert(title: self.lang.noUpdateTitle, message: self.lang.noUpdateBody)
+                        }
+                    }
+                } else {
+                    print("❌ Invalid JSON format from app-info endpoint")
+                    DispatchQueue.main.async {
+                        self.showUpdateAlert(title: self.lang.updateCheckFailedTitle, message: self.lang.updateCheckFailedBody)
+                    }
+                }
+            } catch {
+                print("❌ Failed to parse app info JSON: \(error)")
+                DispatchQueue.main.async {
+                    self.showUpdateAlert(title: self.lang.updateCheckFailedTitle, message: self.lang.updateCheckFailedBody)
+                }
+            }
+        }.resume()
+    }
+
+    func showUpdateAlert(title: String, message: String, downloadURL: String? = nil) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = message
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: lang.okButton)
+        
+        if let urlString = downloadURL, let url = URL(string: urlString) {
+            alert.addButton(withTitle: lang.downloadButton).tag = 1
+        }
+        
+        let response = alert.runModal()
+        print("Alert response rawValue: \(response.rawValue)")
+        if response.rawValue == 1, let urlString = downloadURL, let url = URL(string: urlString) {
+            print("Attempting to open download URL: \(urlString)")
             NSWorkspace.shared.open(url)
         }
     }
